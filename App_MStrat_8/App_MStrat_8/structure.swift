@@ -40,13 +40,13 @@ let form = ItemForm(
 )
 
 
-Struct category
+struct category
 {
   var name : String
   var image : UIImage
 }
 
-Struct Addexpense{
+struct Addexpense{
   let id: UUID
   var itemname : String
   var amount : Int 
@@ -56,7 +56,7 @@ Struct Addexpense{
   var reocurong : Bool
 }
 
-Struct expensecard 
+struct expensecard 
 {
   var name : String 
   var image : UIImage 
