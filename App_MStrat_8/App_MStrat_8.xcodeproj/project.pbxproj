@@ -34,16 +34,28 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
+				structure.swift,
 			);
 			target = 6B098BD62D002DD4006D4C4D /* App_MStrat_8 */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		DB7900452D099EE400F5630E /* Exceptions for "App_MStrat_8" folder in "Copy Bundle Resources" phase from "App_MStrat_8" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 6B098BD52D002DD4006D4C4D /* Resources */;
+			membershipExceptions = (
+				structure.swift,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		6B098BD92D002DD4006D4C4D /* App_MStrat_8 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				6B098BFF2D002DD6006D4C4D /* Exceptions for "App_MStrat_8" folder in "App_MStrat_8" target */,
+				DB7900452D099EE400F5630E /* Exceptions for "App_MStrat_8" folder in "Copy Bundle Resources" phase from "App_MStrat_8" target */,
 			);
 			path = App_MStrat_8;
 			sourceTree = "<group>";

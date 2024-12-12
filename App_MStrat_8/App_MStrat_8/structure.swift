@@ -24,7 +24,7 @@ enum Duration: String {
     case twoMonths = "2 Months"
 }
 
-Struct AddGoal {
+struct AddGoal {
   var title : String
   var amount : String
   var deadline : String
