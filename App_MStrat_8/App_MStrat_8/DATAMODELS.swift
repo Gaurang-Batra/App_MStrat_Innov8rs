@@ -67,6 +67,7 @@ struct Addexpense{
   var reocurong : Bool
 }
 
+
 struct expensecard
 {
   var name : String
@@ -98,11 +99,13 @@ enum SplitOption {
     case unequally
 }
 
+let sampleImage = UIImage(named: "exampleImage") ?? UIImage()
 let expense = ExpenseSplitForm(
     name: "Dinner",
     category: "Food",
     totalAmount: 100.0,
     paidBy: "John",
+    image: sampleImage ,
     splitOption: .equally,
     splitAmounts: nil // Not needed when split equally
 )
@@ -113,6 +116,7 @@ let expense1 = ExpenseSplitForm(
     category: "Food",
     totalAmount: 100.0,
     paidBy: "John",
+    image: sampleImage,
     splitOption: .unequally,
     splitAmounts: [
         "John": 40.0,

@@ -46,7 +46,12 @@ struct category
   var image : UIImage
 }
 
+<<<<<<< HEAD:App_MStrat_8/App_MStrat_8/structure.swift
 struct Addexpense{
+=======
+
+Struct Addexpense{
+>>>>>>> c163f1ade503d2a17f101b11da0d5f6c374b500c:App_MStrat_8/App_MStrat_8/structure.txt
   let id: UUID
   var itemname : String
   var amount : Int 
@@ -111,22 +116,27 @@ let expense = ExpenseSplitForm(
 
 
 struct Group {
-    var groupName: String                     
-    var category: String                      
+    var groupID: String                      
+    var groupName: String                   
+    var category: GroupCategory                    
     var members: [Member]                     
-    var pendingRequests: [Member]            
+    var pendingRequests: [Member]             
+}
+struct Member {
+    var userID: String                        
+    var name: String                        
+    var phoneNumber: String                   
+    var profilePictureURL: String?                 
+    var status: MemberStatus                 
 }
 
-struct Member {
-    var name: String                         
-    var userID: String                        
-    var status: MemberStatus                  
-}
 
 enum MemberStatus {
     case joined                               
-    case pending                               
+    case pending
+    case removed 
 }
+let newMember = Member(userID: "user_002", name: "Gaurang", phoneNumber: "+0987654321", profilePictureURL: nil, isAdmin: false, status: .pending)
 
 let member1 = Member(name: "John", userID: "user_123", status: .joined)
 let member2 = Member(name: "Mary", userID: "user_456", status: .joined)
