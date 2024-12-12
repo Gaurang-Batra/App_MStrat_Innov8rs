@@ -28,10 +28,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6B098BD72D002DD4006D4C4D /* App_MStrat_8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = App_MStrat_8.app; path = "/Users/student-2/Desktop/App_MStrat_Innov8rs/App_MStrat_8/build/Debug-iphoneos/App_MStrat_8.app"; sourceTree = "<absolute>"; };
-		6B098BED2D002DD6006D4C4D /* App_MStrat_8Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = App_MStrat_8Tests.xctest; path = "/Users/student-2/Desktop/App_MStrat_Innov8rs/App_MStrat_8/build/Debug-iphoneos/App_MStrat_8.app/PlugIns/App_MStrat_8Tests.xctest"; sourceTree = "<absolute>"; };
-		6B098BF72D002DD6006D4C4D /* App_MStrat_8UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = App_MStrat_8UITests.xctest; path = "/Users/student-2/Desktop/App_MStrat_Innov8rs/App_MStrat_8/build/Debug-iphoneos/App_MStrat_8UITests-Runner.app/PlugIns/App_MStrat_8UITests.xctest"; sourceTree = "<absolute>"; };
 		DB4F9C992D080AF400FD4397 /* Untitled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Untitled.swift; sourceTree = "<group>"; };
+		DBE651AB2D0AE64700B73BD5 /* App_MStrat_8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App_MStrat_8.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBE651AC2D0AE64700B73BD5 /* App_MStrat_8Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = App_MStrat_8Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBE651AD2D0AE64700B73BD5 /* App_MStrat_8UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = App_MStrat_8UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -97,6 +97,9 @@
 				6B098BF02D002DD6006D4C4D /* App_MStrat_8Tests */,
 				6B098BFA2D002DD6006D4C4D /* App_MStrat_8UITests */,
 				DB4F9C992D080AF400FD4397 /* Untitled.swift */,
+				DBE651AB2D0AE64700B73BD5 /* App_MStrat_8.app */,
+				DBE651AC2D0AE64700B73BD5 /* App_MStrat_8Tests.xctest */,
+				DBE651AD2D0AE64700B73BD5 /* App_MStrat_8UITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,7 +125,7 @@
 			packageProductDependencies = (
 			);
 			productName = App_MStrat_8;
-			productReference = 6B098BD72D002DD4006D4C4D /* App_MStrat_8.app */;
+			productReference = DBE651AB2D0AE64700B73BD5 /* App_MStrat_8.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6B098BEC2D002DD6006D4C4D /* App_MStrat_8Tests */ = {
@@ -145,7 +148,7 @@
 			packageProductDependencies = (
 			);
 			productName = App_MStrat_8Tests;
-			productReference = 6B098BED2D002DD6006D4C4D /* App_MStrat_8Tests.xctest */;
+			productReference = DBE651AC2D0AE64700B73BD5 /* App_MStrat_8Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		6B098BF62D002DD6006D4C4D /* App_MStrat_8UITests */ = {
@@ -168,7 +171,7 @@
 			packageProductDependencies = (
 			);
 			productName = App_MStrat_8UITests;
-			productReference = 6B098BF72D002DD6006D4C4D /* App_MStrat_8UITests.xctest */;
+			productReference = DBE651AD2D0AE64700B73BD5 /* App_MStrat_8UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
