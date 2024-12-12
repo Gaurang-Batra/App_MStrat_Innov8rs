@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		DB4F9C9A2D080AF500FD4397 /* Untitled.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4F9C992D080AF400FD4397 /* Untitled.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		6B098BEE2D002DD6006D4C4D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,9 +28,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6B098BD72D002DD4006D4C4D /* App_MStrat_8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App_MStrat_8.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B098BED2D002DD6006D4C4D /* App_MStrat_8Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = App_MStrat_8Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B098BF72D002DD6006D4C4D /* App_MStrat_8UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = App_MStrat_8UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB4F9C992D080AF400FD4397 /* Untitled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Untitled.swift; sourceTree = "<group>"; };
+		DBE651AB2D0AE64700B73BD5 /* App_MStrat_8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App_MStrat_8.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBE651AC2D0AE64700B73BD5 /* App_MStrat_8Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = App_MStrat_8Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBE651AD2D0AE64700B73BD5 /* App_MStrat_8UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = App_MStrat_8UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -34,28 +39,16 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
-				structure.swift,
 			);
 			target = 6B098BD62D002DD4006D4C4D /* App_MStrat_8 */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		DB7900452D099EE400F5630E /* Exceptions for "App_MStrat_8" folder in "Copy Bundle Resources" phase from "App_MStrat_8" target */ = {
-			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
-			buildPhase = 6B098BD52D002DD4006D4C4D /* Resources */;
-			membershipExceptions = (
-				structure.swift,
-			);
-		};
-/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		6B098BD92D002DD4006D4C4D /* App_MStrat_8 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				6B098BFF2D002DD6006D4C4D /* Exceptions for "App_MStrat_8" folder in "App_MStrat_8" target */,
-				DB7900452D099EE400F5630E /* Exceptions for "App_MStrat_8" folder in "Copy Bundle Resources" phase from "App_MStrat_8" target */,
 			);
 			path = App_MStrat_8;
 			sourceTree = "<group>";
@@ -103,18 +96,11 @@
 				6B098BD92D002DD4006D4C4D /* App_MStrat_8 */,
 				6B098BF02D002DD6006D4C4D /* App_MStrat_8Tests */,
 				6B098BFA2D002DD6006D4C4D /* App_MStrat_8UITests */,
-				6B098BD82D002DD4006D4C4D /* Products */,
+				DB4F9C992D080AF400FD4397 /* Untitled.swift */,
+				DBE651AB2D0AE64700B73BD5 /* App_MStrat_8.app */,
+				DBE651AC2D0AE64700B73BD5 /* App_MStrat_8Tests.xctest */,
+				DBE651AD2D0AE64700B73BD5 /* App_MStrat_8UITests.xctest */,
 			);
-			sourceTree = "<group>";
-		};
-		6B098BD82D002DD4006D4C4D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6B098BD72D002DD4006D4C4D /* App_MStrat_8.app */,
-				6B098BED2D002DD6006D4C4D /* App_MStrat_8Tests.xctest */,
-				6B098BF72D002DD6006D4C4D /* App_MStrat_8UITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +125,7 @@
 			packageProductDependencies = (
 			);
 			productName = App_MStrat_8;
-			productReference = 6B098BD72D002DD4006D4C4D /* App_MStrat_8.app */;
+			productReference = DBE651AB2D0AE64700B73BD5 /* App_MStrat_8.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6B098BEC2D002DD6006D4C4D /* App_MStrat_8Tests */ = {
@@ -162,7 +148,7 @@
 			packageProductDependencies = (
 			);
 			productName = App_MStrat_8Tests;
-			productReference = 6B098BED2D002DD6006D4C4D /* App_MStrat_8Tests.xctest */;
+			productReference = DBE651AC2D0AE64700B73BD5 /* App_MStrat_8Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		6B098BF62D002DD6006D4C4D /* App_MStrat_8UITests */ = {
@@ -185,7 +171,7 @@
 			packageProductDependencies = (
 			);
 			productName = App_MStrat_8UITests;
-			productReference = 6B098BF72D002DD6006D4C4D /* App_MStrat_8UITests.xctest */;
+			productReference = DBE651AD2D0AE64700B73BD5 /* App_MStrat_8UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -221,7 +207,7 @@
 			mainGroup = 6B098BCE2D002DD4006D4C4D;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 6B098BD82D002DD4006D4C4D /* Products */;
+			productRefGroup = 6B098BCE2D002DD4006D4C4D;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -261,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB4F9C9A2D080AF500FD4397 /* Untitled.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
