@@ -247,9 +247,9 @@ class GroupDataModel {
     static let shared = GroupDataModel()
 
     private init() {
-        users.append(User(id: 101, email: "user1@example.com", password: "password", isVerified: true, badges: [], currentGoal: nil))
-        users.append(User(id: 102, email: "user2@example.com", password: "password", isVerified: true, badges: [], currentGoal: nil))
-        users.append(User(id: 103, email: "user3@example.com", password: "password", isVerified: true, badges: [], currentGoal: nil))
+        users.append(User(id: 101, email: "user1@example.com", fullname: "john", password: "password", isVerified: true, badges: [], currentGoal: nil))
+        users.append(User(id: 102, email: "user2@example.com", fullname: "steve", password: "password", isVerified: true, badges: [], currentGoal: nil))
+        users.append(User(id: 103, email: "user3@example.com", fullname: "jack", password: "password", isVerified: true, badges: [], currentGoal: nil))
         
         groups.append(Group(groupName: "Tech Lovers", category: "Technology", members: [101, 102]))
         groups.append(Group(groupName: "Travel Enthusiasts", category: "Travel", members: [103]))
