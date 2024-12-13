@@ -7,15 +7,8 @@
 // Created by Ankush Sharma on 12/12/24.
 import Foundation
 import UIKit
-<<<<<<< HEAD
-
 struct User {
     let id: Int
-    var fullName: String
-=======
-struct User {
-    let id: Int
->>>>>>> ef44b1c45accb097385439de83f51774f0c184c7
     var email: String
     var fullname: String
     var password: String
@@ -37,42 +30,27 @@ let firstUser = User(
     email: "johndoe@example.com",
     fullname: "John Doe",
     password: "password123",
-<<<<<<< HEAD
-    
-    isVerified: true
-=======
     isVerified: true,
     badges: [],
     currentGoal: nil
->>>>>>> ef44b1c45accb097385439de83f51774f0c184c7
 )
 let secondUser = User(
     id: 2,
     email: "janesmith@example.com",
     fullname: "Jane Smith",
     password: "password456",
-<<<<<<< HEAD
-
-    isVerified: false
-=======
     isVerified: false,
     badges: [],
     currentGoal: nil
->>>>>>> ef44b1c45accb097385439de83f51774f0c184c7
 )
 let thirdUser = User(
     id: 3,
     email: "alicej@example.com",
     fullname: "Alice Johnson",
     password: "password789",
-<<<<<<< HEAD
-
-    isVerified: true
-=======
     isVerified: true,
     badges: [],
     currentGoal: nil
->>>>>>> ef44b1c45accb097385439de83f51774f0c184c7
 )
 
 class UserDataModel {
@@ -89,18 +67,6 @@ class UserDataModel {
         return self.users
     }
 
-<<<<<<< HEAD
-    func getUser(by email: String) -> User? {
-        return users.first { $0.email == email }
-    }
-
-    func getVerifiedUsers() -> [User] {
-        return users.filter { $0.isVerified }
-    }
-
-    func addUser(_ user: User) {
-        users.append(user)
-=======
     func getUser(by id: Int) -> User? {
         return users.first { $0.id == id }
     }
@@ -169,7 +135,6 @@ class GoalDataModel {
         if let index = goals.firstIndex(where: { $0.id == id }) {
             goals.remove(at: index)
         }
->>>>>>> ef44b1c45accb097385439de83f51774f0c184c7
     }
 }
 
@@ -191,23 +156,6 @@ let firstAllowance = Allowance(amount: 50.0, isRecurring: true, duration: .oneWe
 let secondAllowance = Allowance(amount: 100.0, isRecurring: false, duration: nil, customDate: Date())
 let thirdAllowance = Allowance(amount: 75.0, isRecurring: true, duration: .oneMonth, customDate: nil)
 
-<<<<<<< HEAD
-let secondAllowance = Allowance(
-    amount: 100.0,
-    isRecurring: false,
-    duration: nil,
-    customDate: Date()
-)
-
-let thirdAllowance = Allowance(
-    amount: 75.0,
-    isRecurring: true,
-    duration: .oneMonth,
-    customDate: nil
-)
-
-=======
->>>>>>> ef44b1c45accb097385439de83f51774f0c184c7
 class AllowanceDataModel {
     private var allowances: [Allowance] = []
     static let shared = AllowanceDataModel()
@@ -231,52 +179,6 @@ class AllowanceDataModel {
     }
 }
 
-<<<<<<< HEAD
-struct AddGoal {
-    var title: String
-    var amount: String
-    var deadline: String
-}
-
-let firstGoal = AddGoal(
-    title: "Buy a New Laptop",
-    amount: "$1200",
-    deadline: "2025-01-15"
-)
-
-let secondGoal = AddGoal(
-    title: "Vacation Fund",
-    amount: "$3000",
-    deadline: "2025-06-01"
-)
-
-let thirdGoal = AddGoal(
-    title: "Emergency Savings",
-    amount: "$5000",
-    deadline: "2025-12-31"
-)
-
-class GoalDataModel {
-    private var goals: [AddGoal] = []
-    static let shared = GoalDataModel()
-
-    private init() {
-        goals.append(firstGoal)
-        goals.append(secondGoal)
-        goals.append(thirdGoal)
-    }
-
-    func getAllGoals() -> [AddGoal] {
-        return self.goals
-    }
-
-    func addGoal(_ goal: AddGoal) {
-        goals.append(goal)
-    }
-}
-
-=======
->>>>>>> ef44b1c45accb097385439de83f51774f0c184c7
 struct Category {
     var name: String
     var image: UIImage
@@ -291,50 +193,6 @@ struct AddExpense {
     var duration: Date?
     var isRecurring: Bool
 }
-<<<<<<< HEAD
-
-
-let firstExpenseSplit = ExpenseSplitForm(
-    name: "Dinner with Friends",
-    category: "Food",
-    totalAmount: 100.0,
-    paidBy: "John Doe",
-    image: UIImage(named: "dinner.jpg")!,
-    splitOption: .equally,
-    splitAmounts: nil
-)
-
-let secondExpenseSplit = ExpenseSplitForm(
-    name: "Trip Expense",
-    category: "Travel",
-    totalAmount: 500.0,
-    paidBy: "Alice Johnson",
-    image: UIImage(named: "trip.jpg")!,
-    splitOption: .unequally,
-    splitAmounts: ["John Doe": 200.0, "Alice Johnson": 300.0]
-)
-
-class SplitExpenseDataModel {
-    private var expenseSplits: [ExpenseSplitForm] = []
-    static let shared = SplitExpenseDataModel()
-
-    private init() {
-       
-        expenseSplits.append(firstExpenseSplit)
-        expenseSplits.append(secondExpenseSplit)
-    }
-
-    func getAllExpenseSplits() -> [ExpenseSplitForm] {
-        return self.expenseSplits
-    }
-
-    func addExpenseSplit(_ expenseSplit: ExpenseSplitForm) {
-        expenseSplits.append(expenseSplit)
-    }
-
-    func calculateEquallySplit(for expense: ExpenseSplitForm) -> [String: Double]? {
-        guard expense.splitOption == .equally else { return nil }
-=======
 
 let firstExpense = AddExpense(id: 1, itemName: "Buy a New Laptop", amount: 1200, image: UIImage(named: "laptop")!, category: "Electronics", duration: DateFormatter().date(from: "2025-01-15"), isRecurring: false)
 let secondExpense = AddExpense(id: 2, itemName: "Vacation Fund", amount: 3000, image: UIImage(named: "vacation")!, category: "Travel", duration: DateFormatter().date(from: "2025-06-01"), isRecurring: true)
@@ -360,7 +218,6 @@ class ExpenseDataModel {
 
     func checkRecurringExpenses() {
         let currentDate = Date()
->>>>>>> ef44b1c45accb097385439de83f51774f0c184c7
 
         for expense in expenses {
             if expense.isRecurring, let duration = expense.duration {
@@ -371,20 +228,6 @@ class ExpenseDataModel {
         }
     }
 
-<<<<<<< HEAD
-    func calculateUnequallySplit(for expense: ExpenseSplitForm) -> [String: Double]? {
-        guard expense.splitOption == .unequally else { return nil }
-        
-       
-        return expense.splitAmounts
-    }
-}
-
-enum SplitOption {
-    case equally
-    case unequally
-}
-=======
     private func promptUserForRecurringExpense(_ expense: AddExpense) {
         print("Do you want to add \(expense.itemName) again?")
         addExpense(expense)
@@ -440,7 +283,6 @@ struct ExpenseCard {
     var amount: Int
 }
 
->>>>>>> ef44b1c45accb097385439de83f51774f0c184c7
 struct ExpenseSplitForm {
     var name: String
     var category: String
@@ -451,53 +293,6 @@ struct ExpenseSplitForm {
     var splitAmounts: [String: Double]?
 }
 
-<<<<<<< HEAD
-struct Member {
-    var name: String
-    var userID: String
-    var status: MemberStatus
-}
-
-enum MemberStatus {
-    case joined
-    case pending
-}
-
-struct Group {
-    var groupName: String
-    var category: String
-    var members: [Member]
-    var pendingRequests: [Member]
-}
-
-class GroupDataModel {
-    private var groups: [Group] = []
-    static let shared = GroupDataModel()
-    
-    private init() {
-        let member1 = Member(name: "John", userID: "user_123", status: .joined)
-        let member2 = Member(name: "Mary", userID: "user_456", status: .joined)
-        let member3 = Member(name: "Alex", userID: "user_789", status: .pending)
-        
-        let group1 = Group(groupName: "Study Group", category: "Education", members: [member1, member2], pendingRequests: [member3])
-        groups.append(group1)
-    }
-    
-    func getAllGroups() -> [Group] {
-        return self.groups
-    }
-    
-    func addGroup(_ group: Group) {
-        groups.append(group)
-    }
-    
-    func addMember(to groupName: String, member: Member) {
-        if let index = groups.firstIndex(where: { $0.groupName == groupName }) {
-            groups[index].members.append(member)
-        }
-    }
-    
-=======
 enum SplitOption {
     case equally
     case unequally
@@ -517,5 +312,4 @@ class SplitExpenseDataModel {
     func getAllExpenseSplits() -> [ExpenseSplitForm] {
         return self.expenseSplits
     }
->>>>>>> ef44b1c45accb097385439de83f51774f0c184c7
 }
