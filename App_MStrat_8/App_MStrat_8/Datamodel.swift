@@ -7,6 +7,8 @@
 // Created by Ankush Sharma on 12/12/24.
 import Foundation
 import UIKit
+
+//user-----------
 struct User {
     let id: Int
     var email: String
@@ -15,14 +17,6 @@ struct User {
     var isVerified: Bool
     var badges: [String]
     var currentGoal: Goal?
-}
-
-enum GoalType {
-    case daily
-    case weekly
-    case monthly
-    case yearly
-    case custom
 }
 
 let firstUser = User(
@@ -97,6 +91,8 @@ class UserDataModel {
     }
 }
 
+//for Goal-----------
+
 struct Goal {
     let id: Int
     var title: String
@@ -104,6 +100,14 @@ struct Goal {
     var deadline: Date
     var type: GoalType
 }
+enum GoalType {
+    case daily
+    case weekly
+    case monthly
+    case yearly
+    case custom
+}
+
 
 let firstGoal = Goal(id: 1, title: "Buy a New Laptop", amount: 1200, deadline: DateFormatter().date(from: "2025-01-15")!, type: .yearly)
 let secondGoal = Goal(id: 2, title: "Vacation Fund", amount: 3000, deadline: DateFormatter().date(from: "2025-06-01")!, type: .monthly)
@@ -137,6 +141,8 @@ class GoalDataModel {
         }
     }
 }
+
+//for Allowance-------------
 
 struct Allowance {
     var amount: Double
@@ -179,10 +185,7 @@ class AllowanceDataModel {
     }
 }
 
-struct Category {
-    var name: String
-    var image: UIImage
-}
+//for Addexpence----------
 
 struct AddExpense {
     let id: Int
@@ -230,9 +233,11 @@ class ExpenseDataModel {
 
     private func promptUserForRecurringExpense(_ expense: AddExpense) {
         print("Do you want to add \(expense.itemName) again?")
-        addExpense(expense)
+       
     }
 }
+
+//for creting groups----------------
 
 struct Group {
     var groupName: String
@@ -277,11 +282,7 @@ class GroupDataModel {
     }
 }
 
-struct ExpenseCard {
-    var name: String
-    var image: UIImage
-    var amount: Int
-}
+//for creating expense split form ----------------
 
 struct ExpenseSplitForm {
     var name: String
@@ -312,4 +313,17 @@ class SplitExpenseDataModel {
     func getAllExpenseSplits() -> [ExpenseSplitForm] {
         return self.expenseSplits
     }
+    func getAmountToBePaid(by participant: String, for expense: ExpenseSplitForm) -> Double? {
+           if let splitAmounts = expense.splitAmounts {
+               return splitAmounts[participant]
+           }
+           return nil
+       }
+       
+    func updateSplitAmounts(expense: inout ExpenseSplitForm, newSplitAmounts: [String: Double]) {
+        if expense.splitOption == .unequally {
+            expense.splitAmounts = newSplitAmounts
+        }
+    }
+
 }
