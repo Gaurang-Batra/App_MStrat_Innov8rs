@@ -37,8 +37,7 @@ class SplitpalViewController: UIViewController {
             Balanceviewcontainer.layer.cornerRadius = 20
                    Balanceviewcontainer.layer.masksToBounds = true
                    
-                   Groupsviewcontainer.layer.cornerRadius = 20
-                   Groupsviewcontainer.layer.masksToBounds = true
+        setTopCornerRadius(for: Groupsviewcontainer, radius: 20)
             
             createVerticalDottedLineInBalanceContainer(atX: Balanceviewcontainer.bounds.size.width / (5/2))
         
@@ -50,6 +49,17 @@ class SplitpalViewController: UIViewController {
             makeButtonCircular()
                     
                }
+    
+    func setTopCornerRadius(for view: UIView, radius: CGFloat) {
+        let path = UIBezierPath(
+            roundedRect: view.bounds,
+            byRoundingCorners: [.topLeft, .topRight],
+            cornerRadii: CGSize(width: radius, height: radius)
+        )
+        let maskLayer = CAShapeLayer()
+        maskLayer.path = path.cgPath
+        view.layer.mask = maskLayer
+    }
         
         func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
             let size = image.size
