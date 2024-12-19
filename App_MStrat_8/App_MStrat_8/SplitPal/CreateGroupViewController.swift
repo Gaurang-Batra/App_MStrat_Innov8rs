@@ -13,7 +13,8 @@ class CreateGroupViewController: UIViewController {
     
     @IBOutlet weak var addmemberbutton: UIButton!
     
-    @IBOutlet weak var categoryButton: UIButton!
+    @IBOutlet var categoryButton: [UIButton]!
+    
     
     var isButtonPressed = false
     
@@ -29,31 +30,34 @@ class CreateGroupViewController: UIViewController {
 
               // Do any additional setup after loading the view.
 //        categoryButton.backgroundColor = .green
-        categoryButton.tintColor = .gray
-        
-        // Set the image and title for the button
-               categoryButton.setImage(UIImage(named: "traveler"), for: .normal)
-               categoryButton.setTitle("trip", for: .normal)
-
-               // Resize the image (optional) to make it smaller
-               if let originalImage = UIImage(named: "traveler") {
-                   let resizedImage = resizeImage(image: originalImage, targetSize: CGSize(width: 30, height: 30))
-                   categoryButton.setImage(resizedImage, for: .normal)
-               }
-
-               // Adjust the button's layout to arrange the image above the text
-               categoryButton.imageEdgeInsets = UIEdgeInsets(top: -10, left: 0, bottom: 0, right: 0) // Moves image upwards
-               categoryButton.titleEdgeInsets = UIEdgeInsets(top: 10, left: -40, bottom: 0, right: 0) // Moves title downwards
-
-               // Vertically center the content within the button
-               categoryButton.contentVerticalAlignment = .center
-               categoryButton.contentHorizontalAlignment = .center
+//        categoryButton.tintColor = .gray
+//        
+//        // Set the image and title for the button
+//               categoryButton.setImage(UIImage(named: "traveler"), for: .normal)
+//               categoryButton.setTitle("trip", for: .normal)
+//
+//               // Resize the image (optional) to make it smaller
+//               if let originalImage = UIImage(named: "traveler") {
+//                   let resizedImage = resizeImage(image: originalImage, targetSize: CGSize(width: 30, height: 30))
+//                   categoryButton.setImage(resizedImage, for: .normal)
+//               }
+//
+//               // Adjust the button's layout to arrange the image above the text
+//               categoryButton.imageEdgeInsets = UIEdgeInsets(top: -10, left: 0, bottom: 0, right: 0) // Moves image upwards
+//               categoryButton.titleEdgeInsets = UIEdgeInsets(top: 10, left: -40, bottom: 0, right: 0) // Moves title downwards
+//
+//               // Vertically center the content within the button
+//               categoryButton.contentVerticalAlignment = .center
+//               categoryButton.contentHorizontalAlignment = .center
           }
    
     
 
     
     @IBAction func categoryButtontapped(_ sender: UIButton) {
+        for button in categoryButton {
+            button.tintColor = .gray // Reset to the default color
+            }
     
         
         sender.tintColor = .orange

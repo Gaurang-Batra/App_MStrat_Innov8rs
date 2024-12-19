@@ -47,7 +47,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" systemColor="systemGray3Color"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="trip"/>
                                         <connections>
                                             <action selector="categoryButtontapped:" destination="8uS-bN-zpI" eventType="touchUpInside" id="n0r-mR-K7k"/>
                                         </connections>
@@ -57,7 +57,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" systemColor="systemGray3Color"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Rent"/>
                                         <connections>
                                             <action selector="categoryButtontapped:" destination="8uS-bN-zpI" eventType="touchUpInside" id="Lmf-lo-SlC"/>
                                         </connections>
@@ -67,7 +67,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" systemColor="systemGray3Color"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="GYM"/>
                                         <connections>
                                             <action selector="categoryButtontapped:" destination="8uS-bN-zpI" eventType="touchUpInside" id="hao-Px-fzB"/>
                                         </connections>
@@ -77,7 +77,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" systemColor="systemGray3Color"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Others"/>
                                         <connections>
                                             <action selector="categoryButtontapped:" destination="8uS-bN-zpI" eventType="touchUpInside" id="Ga3-tv-w8n"/>
                                         </connections>
@@ -87,7 +87,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" systemColor="systemGray3Color"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Grocery"/>
                                         <connections>
                                             <action selector="categoryButtontapped:" destination="8uS-bN-zpI" eventType="touchUpInside" id="Qic-YY-EqZ"/>
                                         </connections>
@@ -97,7 +97,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" systemColor="systemGray3Color"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Sports"/>
                                         <connections>
                                             <action selector="categoryButtontapped:" destination="8uS-bN-zpI" eventType="touchUpInside" id="whe-cK-6eN"/>
                                         </connections>
@@ -134,8 +134,13 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addmemberbutton" destination="gpC-go-TXi" id="IBO-pR-4y7"/>
-                        <outlet property="categoryButton" destination="2Px-5h-pkB" id="tnL-p2-gdc"/>
                         <outlet property="textField" destination="rQ4-Va-vdJ" id="Kzz-1p-alp"/>
+                        <outletCollection property="categoryButton" destination="2Px-5h-pkB" collectionClass="NSMutableArray" id="wI8-AU-ZG9"/>
+                        <outletCollection property="categoryButton" destination="qf2-F0-0hf" collectionClass="NSMutableArray" id="2a9-fn-wxB"/>
+                        <outletCollection property="categoryButton" destination="TZ5-JY-5nJ" collectionClass="NSMutableArray" id="UG8-6J-WMF"/>
+                        <outletCollection property="categoryButton" destination="0AY-im-0u3" collectionClass="NSMutableArray" id="zy2-XA-09k"/>
+                        <outletCollection property="categoryButton" destination="ZGO-Gw-QEU" collectionClass="NSMutableArray" id="kyB-uh-32D"/>
+                        <outletCollection property="categoryButton" destination="ErQ-aY-r3f" collectionClass="NSMutableArray" id="n7j-zq-YPR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="68y-25-yzg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
