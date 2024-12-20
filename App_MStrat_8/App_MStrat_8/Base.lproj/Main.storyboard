@@ -12,7 +12,6 @@
         <!--SplitPal-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="SplitpalViewController" customModule="App_MStrat_8" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -81,7 +80,7 @@
                                             <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="Pt0-7K-WWt" kind="presentation" id="yWr-rs-6Jk"/>
+                                            <segue destination="Pt0-7K-WWt" kind="show" id="nGf-Od-q5h"/>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CCt-sV-c0S">
@@ -214,13 +213,16 @@ Try it!</string>
                         <outlet property="welcomeimage" destination="CCt-sV-c0S" id="6H9-2b-WWy"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1551.9083969465648" y="169.71830985915494"/>
         </scene>
         <!--SplitPal-->
         <scene sceneID="GSL-kt-Bra">
             <objects>
-                <viewControllerPlaceholder storyboardName="SplitPal" id="Pt0-7K-WWt" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="SplitPal" id="Pt0-7K-WWt" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="IIE-NS-k6L"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dfl-ET-v79" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2479" y="170"/>
@@ -228,7 +230,6 @@ Try it!</string>
         <!--SplitPal-->
         <scene sceneID="em5-IT-PDh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fJl-nt-bNi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8rp-Op-sNs" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="SplitPal" image="Split1" selectedImage="Splitfill" id="qeL-jd-OFO">
                         <color key="badgeColor" red="0.1764705926" green="0.37647059560000001" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -243,6 +244,7 @@ Try it!</string>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="GnU-pg-QIc"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fJl-nt-bNi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="691" y="172"/>
         </scene>
@@ -268,6 +270,7 @@ Try it!</string>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="sbJ-cx-RRT" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aAn-7h-JUW">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.77647060160000003" green="0.77647060160000003" blue="0.77647060160000003" alpha="0.17836817052980133" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>

@@ -411,3 +411,68 @@ class SplitExpenseDataModel {
         }
     }
 }
+
+enum ExpenseTimeSegment {
+    case daily
+    case weekly
+    case monthly
+    case yearly
+}
+
+struct ExpenseData {
+    var date: Date
+    var totalAmount: Double
+}
+
+class ExpenseGraphDataModel {
+    private var dailyExpenses: [ExpenseData] = []
+    private var weeklyExpenses: [ExpenseData] = []
+    private var monthlyExpenses: [ExpenseData] = []
+    private var yearlyExpenses: [ExpenseData] = []
+
+    static let shared = ExpenseGraphDataModel()
+
+    private init() {
+        generateMockData()
+    }
+
+    func getExpenses(for segment: ExpenseTimeSegment) -> [ExpenseData] {
+        switch segment {
+        case .daily:
+            return dailyExpenses
+        case .weekly:
+            return weeklyExpenses
+        case .monthly:
+            return monthlyExpenses
+        case .yearly:
+            return yearlyExpenses
+        }
+    }
+
+    private func generateMockData() {
+        let calendar = Calendar.current
+        let today = Date()
+        for i in 0..<7 {
+            if let day = calendar.date(byAdding: .day, value: -i, to: today) {
+                dailyExpenses.append(ExpenseData(date: day, totalAmount: Double.random(in: 20...200)))
+            }
+        }
+        for i in 0..<4 {
+            if let week = calendar.date(byAdding: .weekOfYear, value: -i, to: today) {
+                weeklyExpenses.append(ExpenseData(date: week, totalAmount: Double.random(in: 200...800)))
+            }
+        }
+
+        for i in 0..<6 {
+            if let month = calendar.date(byAdding: .month, value: -i, to: today) {
+                monthlyExpenses.append(ExpenseData(date: month, totalAmount: Double.random(in: 500...2000)))
+            }
+        }
+
+        for i in 0..<5 {
+            if let year = calendar.date(byAdding: .year, value: -i, to: today) {
+                yearlyExpenses.append(ExpenseData(date: year, totalAmount: Double.random(in: 5000...20000)))
+            }
+        }
+    }
+}
