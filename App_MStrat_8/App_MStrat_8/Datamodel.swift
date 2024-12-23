@@ -519,8 +519,11 @@ struct GroupSplitTests {
 
 var group: [GroupSplitTests] = [
     
-        GroupSplitTests(image: UIImage(named: "traveler") ?? UIImage(systemName: "Split1"), name: "Travel"),
-        GroupSplitTests(image: UIImage(named: "traveler") ?? UIImage(systemName: "Split1"), name: "Work")
+        GroupSplitTests(image: UIImage(named: "Split1") ?? UIImage(systemName: "Split"), name: "Travel"),
+        GroupSplitTests(image: UIImage(named: "icons8-history-50") ?? UIImage(systemName: "icons8-history-50"), name: "Work"),
+        
+        GroupSplitTests(image: UIImage(named: "Split1") ?? UIImage(systemName: "Split"), name: "Travel"),
+        GroupSplitTests(image: UIImage(named: "icons8-history-50") ?? UIImage(systemName: "icons8-history-50"), name: "Work")
     
 
 ]

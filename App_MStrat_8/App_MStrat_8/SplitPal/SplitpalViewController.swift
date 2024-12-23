@@ -27,6 +27,9 @@ class SplitpalViewController:  UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.delegate = self
+               tableView.dataSource = self
+        
 
 
         // Do any additional setup after loading the view.
@@ -51,6 +54,9 @@ class SplitpalViewController:  UIViewController, UITableViewDelegate, UITableVie
          
                    
             makeButtonCircular()
+        tableView.separatorStyle = .singleLine
+     
+        
                     
                }
     
@@ -130,36 +136,81 @@ class SplitpalViewController:  UIViewController, UITableViewDelegate, UITableVie
               addgroupbutton.layer.masksToBounds = true
           }
     // MARK: - UITableViewDataSource Methods
-      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-          return group.count
-      }
+     
+    var selectedGroupIndex: Int? = nil
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SplitCell", for: indexPath)
-        let groupItem = group[indexPath.row]
-        
-        cell.textLabel?.text = groupItem.name
-        cell.imageView?.image = groupItem.image
-
-        cell.layer.cornerRadius = 10
-        cell.layer.masksToBounds = true
-
-       
-        
-        return cell
-    }
-
-
-
-      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-          tableView.deselectRow(at: indexPath, animated: true)
-          print("Selected Group: \(group[indexPath.row])")
-      }
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        
-//        return 50
-//    }
+    @IBOutlet weak var tableView: UITableView!
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+         return group.count // Each group item gets its own section
+     }
+     
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+         return 1 // Each section has only one row
+     }
+     
+     // Configure the cell for each row
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+         let cell = tableView.dequeueReusableCell(withIdentifier: "SplitCell", for: indexPath)
+         
+         let groupItem = group[indexPath.section] // Use the section index for the group
+         
+         // Set the text and image for the cell
+         cell.textLabel?.text = groupItem.name
+         cell.imageView?.image = groupItem.image
+         
+         // Optionally, you can customize the appearance of the cell
+         cell.layer.cornerRadius = 10
+         cell.layer.masksToBounds = true
+         
+         return cell
+     }
+     
+     // MARK: - UITableViewDelegate Methods
+     
+     // Handle row selection
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         // Deselect the row after selection
+         tableView.deselectRow(at: indexPath, animated: true)
+         
+         // Store the selected section index (not row)
+         selectedGroupIndex = indexPath.section
+         
+         // Perform the segue when a row is selected
+         performSegue(withIdentifier: "Groupsdetails", sender: self)
+     }
+     
+     // MARK: - Segue Preparation
+     
+     // Prepare for segue when navigating to GroupDetailViewController
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         // Check if the segue identifier matches "Groupsdetails"
+         if segue.identifier == "Groupsdetails",
+            let destinationVC = segue.destination as? GroupDetailViewController {
+             
+             // Ensure the selected index is valid
+             if let selectedIndex = selectedGroupIndex {
+                 // Fetch the selected group from the array using the section index
+                 let selectedGroup = group[selectedIndex]
+                 
+                 // Pass the selected group object to the destination view controller
+                 destinationVC.groupItem = selectedGroup
+             }
+         }
+     }
+
+     // Optional: Set height for rows
+     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+         return 60 // Set the height of the cell
+     }
+//    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        let view = UIView()
+//        view.backgroundColor = .clear // Make the footer transparent
+//        return view
+//    }
+//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//           return 10 // This adds space after each row
+//       }
     
 
           
