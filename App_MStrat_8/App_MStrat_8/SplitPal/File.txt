@@ -1,0 +1,27 @@
+// MARK: - UITableViewDataSource Methods
+func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return group.count
+}
+
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "SplitCell", for: indexPath)
+    let groupItem = group[indexPath.row]
+    
+    // Configure the cell
+    cell.textLabel?.text = groupItem.name
+    cell.imageView?.image = groupItem.image
+
+    // Round the corners
+    cell.layer.cornerRadius = 10
+    cell.layer.masksToBounds = true
+
+    // Add padding to the contentView to create margins inside the cell
+    cell.contentView.layoutMargins = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
+
+    return cell
+}
+
+// MARK: - UITableViewDelegate Methods for Row Height
+func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 80  // Adjust the height to create visible space between cells
+}

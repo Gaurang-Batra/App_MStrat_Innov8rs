@@ -476,3 +476,17 @@ class ExpenseGraphDataModel {
 //        }
     }
 }
+struct GroupSplitTests {
+    var image: UIImage?
+    var name: String
+}
+
+var group: [GroupSplitTests] = [
+    
+        GroupSplitTests(image: UIImage(named: "traveler") ?? UIImage(systemName: "Split1"), name: "Travel"),
+        GroupSplitTests(image: UIImage(named: "traveler") ?? UIImage(systemName: "Split1"), name: "Work")
+    
+
+]
+
+

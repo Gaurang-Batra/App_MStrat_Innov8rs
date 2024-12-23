@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SplitpalViewController: UIViewController {
+class SplitpalViewController:  UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var Balanceviewcontainer: UIView!
     
@@ -21,13 +21,17 @@ class SplitpalViewController: UIViewController {
     
     
     
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
 
         // Do any additional setup after loading the view.
        
-            
+        
             if let image = UIImage(named: "Group")
             {
                 welcomeimage.image = image
@@ -125,5 +129,38 @@ class SplitpalViewController: UIViewController {
               // Enable masksToBounds to make sure the content fits inside the rounded corner
               addgroupbutton.layer.masksToBounds = true
           }
+    // MARK: - UITableViewDataSource Methods
+      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+          return group.count
+      }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SplitCell", for: indexPath)
+        let groupItem = group[indexPath.row]
+        
+        cell.textLabel?.text = groupItem.name
+        cell.imageView?.image = groupItem.image
+
+        cell.layer.cornerRadius = 10
+        cell.layer.masksToBounds = true
+
+       
+        
+        return cell
+    }
+
+
+
+      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+          tableView.deselectRow(at: indexPath, animated: true)
+          print("Selected Group: \(group[indexPath.row])")
+      }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        
+//        return 50
+//    }
+    
+    
+
           
-           }
+}
