@@ -7,6 +7,10 @@
 
 import UIKit
 
+
+
+
+
 class BalanceCellTableViewCell: UITableViewCell {
     
     @IBOutlet weak var senderprofilename: UILabel!
@@ -16,6 +20,11 @@ class BalanceCellTableViewCell: UITableViewCell {
     @IBOutlet weak var Sendingamount: UILabel!
     
     @IBOutlet weak var balancecellview: UIView!
+    
+    var balance: Balance?
+    
+
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -41,6 +50,27 @@ class BalanceCellTableViewCell: UITableViewCell {
         receiverprofilename.text = balance.payee
         Sendingamount.text = "$\(balance.amount)"
     }
+    
+    @IBAction func settlementButtonTapped(_ sender: UIButton) {
+        if let balanceAmount = balance?.amount {
+             // Get the parent view controller
+             if let viewController = self.parentViewController() as? GroupDetailViewController {
+                 viewController.navigateToSettlement(with: balanceAmount)
+             }
+         }
+     }
+ }
 
-
-}
+ // Extension to get the parent view controller from a UIView
+ extension UIView {
+     func parentViewController() -> UIViewController? {
+         var nextResponder = self.next
+         while nextResponder != nil {
+             if let viewController = nextResponder as? UIViewController {
+                 return viewController
+             }
+             nextResponder = nextResponder?.next
+         }
+         return nil
+     }
+ }

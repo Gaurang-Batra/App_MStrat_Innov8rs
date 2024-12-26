@@ -21,6 +21,8 @@ struct Expens {
 
 
 class GroupDetailViewController: UIViewController , UITableViewDataSource, UITableViewDelegate{
+    
+    ///--------------------------
     let balances = [
             Balance(payer: "friend1", payee: "Ajay (You)", amount: 30, isMine: true),
             Balance(payer: "friend2", payee: "friend1", amount: 30, isMine: false),
@@ -36,6 +38,8 @@ class GroupDetailViewController: UIViewController , UITableViewDataSource, UITab
     ]
     var myBalances: [Balance] = []
       var othersBalances: [Balance] = []
+    
+    //////-------------------
    
   
 
@@ -67,8 +71,12 @@ class GroupDetailViewController: UIViewController , UITableViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ////=---------------------
+        
         myBalances = balances.filter { $0.payer == "Ajay (You)" || $0.payee == "Ajay (You)" }
         othersBalances = balances.filter { $0.payer != "Ajay (You)" && $0.payee != "Ajay (You)" }
+        
+        /////-----------------
 
         if let item = groupItem {
             groupnamelabel?.text = item.name
@@ -212,7 +220,21 @@ class GroupDetailViewController: UIViewController , UITableViewDataSource, UITab
         }
         return 50
     }
-
+    
+    func navigateToSettlement(with amount: Double) {
+           // Trigger the segue and pass the amount to the destination view controller
+           performSegue(withIdentifier: "Settlement", sender: amount)
+       }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           if segue.identifier == "Settlement" {
+               if let destinationVC = segue.destination as? SettlementViewController,
+                  let amount = sender as? Double {
+                   print("send amount \(amount)")
+                   destinationVC.labelText = amount
+               }
+           }
+       }
+    
 
 
     /*
