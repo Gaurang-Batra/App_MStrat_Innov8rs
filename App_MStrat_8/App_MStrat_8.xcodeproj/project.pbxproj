@@ -30,7 +30,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		6B098BFF2D002DD6006D4C4D /* Exceptions for "App_MStrat_8" folder in "App_MStrat_8" target */ = {
+		DB3392CC2D2F9205000ED909 /* Exceptions for "App_MStrat_8" folder in "App_MStrat_8" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -41,7 +41,7 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		DB7900452D099EE400F5630E /* Exceptions for "App_MStrat_8" folder in "Copy Bundle Resources" phase from "App_MStrat_8" target */ = {
+		DB3392CD2D2F9205000ED909 /* Exceptions for "App_MStrat_8" folder in "Copy Bundle Resources" phase from "App_MStrat_8" target */ = {
 			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
 			buildPhase = 6B098BD52D002DD4006D4C4D /* Resources */;
 			membershipExceptions = (
@@ -51,15 +51,6 @@
 /* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		6B098BD92D002DD4006D4C4D /* App_MStrat_8 */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				6B098BFF2D002DD6006D4C4D /* Exceptions for "App_MStrat_8" folder in "App_MStrat_8" target */,
-				DB7900452D099EE400F5630E /* Exceptions for "App_MStrat_8" folder in "Copy Bundle Resources" phase from "App_MStrat_8" target */,
-			);
-			path = App_MStrat_8;
-			sourceTree = "<group>";
-		};
 		6B098BF02D002DD6006D4C4D /* App_MStrat_8Tests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = App_MStrat_8Tests;
@@ -68,6 +59,15 @@
 		6B098BFA2D002DD6006D4C4D /* App_MStrat_8UITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = App_MStrat_8UITests;
+			sourceTree = "<group>";
+		};
+		DB3392B42D2F9205000ED909 /* App_MStrat_8 */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				DB3392CC2D2F9205000ED909 /* Exceptions for "App_MStrat_8" folder in "App_MStrat_8" target */,
+				DB3392CD2D2F9205000ED909 /* Exceptions for "App_MStrat_8" folder in "Copy Bundle Resources" phase from "App_MStrat_8" target */,
+			);
+			path = App_MStrat_8;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -100,7 +100,7 @@
 		6B098BCE2D002DD4006D4C4D = {
 			isa = PBXGroup;
 			children = (
-				6B098BD92D002DD4006D4C4D /* App_MStrat_8 */,
+				DB3392B42D2F9205000ED909 /* App_MStrat_8 */,
 				6B098BF02D002DD6006D4C4D /* App_MStrat_8Tests */,
 				6B098BFA2D002DD6006D4C4D /* App_MStrat_8UITests */,
 				6B098BD82D002DD4006D4C4D /* Products */,
@@ -133,7 +133,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				6B098BD92D002DD4006D4C4D /* App_MStrat_8 */,
+				DB3392B42D2F9205000ED909 /* App_MStrat_8 */,
 			);
 			name = App_MStrat_8;
 			packageProductDependencies = (

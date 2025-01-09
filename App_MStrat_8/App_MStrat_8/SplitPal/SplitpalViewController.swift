@@ -150,22 +150,17 @@ class SplitpalViewController:  UIViewController, UITableViewDelegate, UITableVie
      }
      
      // Configure the cell for each row
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         let cell = tableView.dequeueReusableCell(withIdentifier: "SplitCell", for: indexPath)
-         
-         let groupItem = group[indexPath.section] // Use the section index for the group
-         
-         // Set the text and image for the cell
-         cell.textLabel?.text = groupItem.name
-         cell.imageView?.image = groupItem.image
-         
-         // Optionally, you can customize the appearance of the cell
-         cell.layer.cornerRadius = 10
-         cell.layer.masksToBounds = true
-         
-         return cell
-     }
-     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SplitCell", for: indexPath)
+        
+        let groupItem = group[indexPath.section]
+        
+        cell.textLabel?.text = groupItem.name
+        cell.imageView?.image = groupItem.image
+        
+        return cell
+    }
+
      // MARK: - UITableViewDelegate Methods
      
      // Handle row selection
