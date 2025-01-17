@@ -8,10 +8,11 @@
 import Foundation
 
 struct Group {
-    var id : Int
+    var id: Int
     var groupName: String
     var category: String
     var members: [Int]
+    var expenses: [ExpenseSplitForm]?
 }
 
 class GroupDataModel {
@@ -21,16 +22,30 @@ class GroupDataModel {
     static let shared = GroupDataModel()
 
     private init() {
-        users.append(User(id: 101, email: "user1@example.com", fullname: "john", password: "password", isVerified: true, badges: [], currentGoal: nil, expenses: []))
-        users.append(User(id: 102, email: "user2@example.com", fullname: "steve", password: "password", isVerified: true, badges: [], currentGoal: nil, expenses: []))
-        users.append(User(id: 103, email: "user3@example.com", fullname: "jack", password: "password", isVerified: true, badges: [], currentGoal: nil, expenses: []))
-        
-        groups.append(Group(id: 1, groupName: "Tech Lovers", category: "Technology", members: [101, 102]))
-        groups.append(Group(id: 3, groupName: "Travel Enthusiasts", category: "Travel", members: [103]))
+        // Sample users
+        users.append(User(id: 101, email: "user1@example.com", fullname: "John", password: "password", isVerified: true, badges: [], currentGoal: nil, expenses: []))
+        users.append(User(id: 102, email: "user2@example.com", fullname: "Steve", password: "password", isVerified: true, badges: [], currentGoal: nil, expenses: []))
+        users.append(User(id: 103, email: "user3@example.com", fullname: "Jack", password: "password", isVerified: true, badges: [], currentGoal: nil, expenses: []))
+
+        // Sample groups
+        groups.append(Group(
+            id: 1,
+            groupName: "Tech Lovers",
+            category: "Technology",
+            members: [101, 102],
+            expenses: nil
+        ))
+        groups.append(Group(
+            id: 2,
+            groupName: "Travel Enthusiasts",
+            category: "Travel",
+            members: [103],
+            expenses: nil
+        ))
     }
 
     func createGroup(groupName: String, category: String, members: [Int]) {
-        let newGroup = Group(id: (groups.last?.id ?? 0) + 1, groupName: groupName, category: category, members: members)
+        let newGroup = Group(id: (groups.last?.id ?? 0) + 1, groupName: groupName, category: category, members: members, expenses: nil)
         groups.append(newGroup)
     }
 
@@ -50,16 +65,30 @@ class GroupDataModel {
         return groups.first { $0.groupName == groupName }
     }
 
-    func addSplitExpense(expense: ExpenseSplitForm) {
-        guard let groupIndex = groups.firstIndex(where: { $0.id == expense.groupId }) else { return }
+    func addExpenseToGroup(expense: ExpenseSplitForm) {
+        guard let groupIndex = groups.firstIndex(where: { $0.id == expense.groupId }) else {
+            print("Group not found!")
+            return
+        }
 
+        // Check if expenses array exists; if not, initialize it
+        if groups[groupIndex].expenses == nil {
+            groups[groupIndex].expenses = []
+        }
+
+        // Add the expense to the group's expense list
+        groups[groupIndex].expenses?.append(expense)
+
+        // Notify group members about the new expense
         let group = groups[groupIndex]
-        let memberIds = group.members
-
-        for memberId in memberIds {
+        for memberId in group.members {
             if let user = users.first(where: { $0.id == memberId }) {
                 print("Notifying \(user.fullname) about the new expense: \(expense.name)")
             }
         }
+    }
+
+    func getExpensesForGroup(groupId: Int) -> [ExpenseSplitForm]? {
+        return groups.first(where: { $0.id == groupId })?.expenses
     }
 }
